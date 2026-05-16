@@ -1,26 +1,26 @@
-import Anthropic from '@anthropic-ai/sdk'
+import Groq from 'groq-sdk'
 
-export const claude = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY!,
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY!,
 })
 
-export const MODEL = 'claude-sonnet-4-6'
+export const MODEL = 'llama-3.3-70b-versatile'
 
 export async function runAgent(
   systemPrompt: string,
   userMessage: string,
   maxTokens = 4096
 ): Promise<string> {
-  const response = await claude.messages.create({
+  const response = await groq.chat.completions.create({
     model: MODEL,
     max_tokens: maxTokens,
-    system: systemPrompt,
-    messages: [{ role: 'user', content: userMessage }],
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userMessage },
+    ],
   })
 
-  const block = response.content[0]
-  if (block.type !== 'text') throw new Error('Unexpected response type from Claude')
-  return block.text
+  return response.choices[0]?.message?.content ?? ''
 }
 
 export async function runAgentJSON<T>(
