@@ -25,9 +25,11 @@ export default function TasksPage() {
 
   const fetchTasks = useCallback(async () => {
     setLoading(true)
-    const res = await fetch('/api/data/tasks')
-    const data = await res.json()
-    if (data.success) setTasks(data.data ?? [])
+    try {
+      const res = await fetch('/api/data/tasks')
+      const data = await res.json()
+      if (data.success) setTasks(data.data ?? [])
+    } catch {}
     setLoading(false)
   }, [])
 

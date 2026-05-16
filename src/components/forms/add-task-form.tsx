@@ -22,19 +22,32 @@ export function AddTaskForm({ onSuccess }: AddTaskFormProps = {}) {
     e.preventDefault()
     setLoading(true)
     setError('')
-    const res = await fetch('/api/data/tasks', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    })
-    const data = await res.json()
-    setLoading(false)
-    if (data.success) {
-      setForm({ title: '', description: '', department: 'unassigned', priority: 'medium', due_date: '' })
-      setOpen(false)
-      onSuccess ? onSuccess() : router.refresh()
-    } else {
-      setError(data.error ?? 'Something went wrong')
+    try {
+      const res = await fetch('/api/data/tasks', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      let data: { success: boolean; error?: string } = { success: false }
+      try { data = await res.json() } catch { data = { success: false, error: `Server error (${res.status})` } }
+      setLoading(false)
+      if (data.success) {
+        setForm({ title: '', description: '', department: 'unassigned', priority: 'medium', due_date: '' })
+        setOpen(false)
+        onSuccess ? onSuccess() : router.refresh()
+      } else {
+        const msg = data.error ?? 'Something went wrong'
+        if (msg.includes('does not exist')) {
+          setError('Tasks table missing — run the SQL migration in Supabase (see setup guide).')
+        } else if (msg.includes('fetch failed') || msg.includes('ECONNREFUSED')) {
+          setError('Cannot reach Supabase — check your .env.local credentials or wake up the Supabase project.')
+        } else {
+          setError(msg)
+        }
+      }
+    } catch (err) {
+      setLoading(false)
+      setError(err instanceof Error ? err.message : 'Network error — is the dev server running?')
     }
   }
 
