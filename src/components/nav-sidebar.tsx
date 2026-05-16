@@ -11,6 +11,7 @@ const nav = [
   { href: '/finance', label: 'Finance', icon: '📊', agent: 'finance' },
   { href: '/marketing', label: 'Marketing', icon: '📱', agent: 'marketing' },
   { href: '/seo', label: 'SEO', icon: '🔍', agent: 'seo' },
+  { href: '/tasks', label: 'Tasks', icon: '📋', agent: 'tasks' },
 ]
 
 interface NavSidebarProps {

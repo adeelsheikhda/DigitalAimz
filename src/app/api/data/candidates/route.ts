@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 
 export async function POST(request: Request) {
   try {
@@ -10,7 +10,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: 'Name and position are required' }, { status: 400 })
     }
 
-    const supabase = await createClient()
+    const supabase = createAdminClient()
     const { data, error } = await supabase
       .from('candidates')
       .insert({ name, email, phone, position, resume_text, status: 'new' })
@@ -20,6 +20,7 @@ export async function POST(request: Request) {
     if (error) return NextResponse.json({ success: false, error: error.message }, { status: 500 })
     return NextResponse.json({ success: true, data })
   } catch (error) {
-    return NextResponse.json({ success: false, error: 'Invalid request' }, { status: 400 })
+    const msg = error instanceof Error ? error.message : 'Invalid request'
+    return NextResponse.json({ success: false, error: msg }, { status: 400 })
   }
 }
