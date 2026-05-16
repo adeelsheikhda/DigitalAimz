@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { DecisionCard } from '@/components/decision-card'
 import { RunAgentButton } from '@/components/run-agent-button'
 import { StatCard } from '@/components/stat-card'
+import { AddCandidateForm } from '@/components/forms/add-candidate-form'
 import { formatDate, cn } from '@/lib/utils'
 import type { Decision, Candidate } from '@/types'
 
@@ -56,6 +57,7 @@ export default async function HRPage() {
         {/* Candidate List */}
         <div className="space-y-3">
           <h2 className="text-white font-semibold text-sm uppercase tracking-widest">Candidates</h2>
+          <AddCandidateForm />
           {candidates.length === 0 ? (
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-8 text-center">
               <p className="text-zinc-500 text-sm">No candidates yet. Add resumes to the candidates table.</p>

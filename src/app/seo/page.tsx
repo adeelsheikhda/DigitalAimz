@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { DecisionCard } from '@/components/decision-card'
 import { RunAgentButton } from '@/components/run-agent-button'
 import { StatCard } from '@/components/stat-card'
+import { AddSeoForm } from '@/components/forms/add-seo-form'
 import { cn } from '@/lib/utils'
 import type { Decision, SeoContent } from '@/types'
 
@@ -68,6 +69,7 @@ export default async function SeoPage() {
         {/* SEO Content List */}
         <div className="space-y-3">
           <h2 className="text-white font-semibold text-sm uppercase tracking-widest">Keyword Pipeline</h2>
+          <AddSeoForm />
           {seoItems.length === 0 ? (
             <div className="rounded-xl border border-zinc-800 bg-zinc-900/30 p-8 text-center">
               <p className="text-zinc-500 text-sm">Add keywords to seo_content table to begin research.</p>

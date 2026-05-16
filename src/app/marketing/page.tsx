@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { DecisionCard } from '@/components/decision-card'
 import { RunAgentButton } from '@/components/run-agent-button'
 import { StatCard } from '@/components/stat-card'
+import { AddContentForm } from '@/components/forms/add-content-form'
 import { cn } from '@/lib/utils'
 import type { Decision, ContentPiece } from '@/types'
 
@@ -62,6 +63,7 @@ export default async function MarketingPage() {
         {/* Content List */}
         <div className="space-y-3">
           <h2 className="text-white font-semibold text-sm uppercase tracking-widest">Content Pieces</h2>
+          <AddContentForm />
           <div className="space-y-2 max-h-[600px] overflow-y-auto pr-1">
             {content.map(piece => (
               <div key={piece.id} className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4">

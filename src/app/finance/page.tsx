@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { DecisionCard } from '@/components/decision-card'
 import { RunAgentButton } from '@/components/run-agent-button'
 import { StatCard } from '@/components/stat-card'
+import { AddInvoiceForm } from '@/components/forms/add-invoice-form'
 import { formatCurrency, formatDate, cn } from '@/lib/utils'
 import type { Decision, Invoice } from '@/types'
 
@@ -72,6 +73,7 @@ export default async function FinancePage() {
         {/* Invoice List */}
         <div className="space-y-3">
           <h2 className="text-white font-semibold text-sm uppercase tracking-widest">All Invoices</h2>
+          <AddInvoiceForm />
           <div className="space-y-2 max-h-[600px] overflow-y-auto pr-1">
             {invoices.map(inv => (
               <div key={inv.id} className={cn(

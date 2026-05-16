@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { DecisionCard } from '@/components/decision-card'
 import { RunAgentButton } from '@/components/run-agent-button'
 import { StatCard } from '@/components/stat-card'
+import { AddLeadForm } from '@/components/forms/add-lead-form'
 import { formatCurrency, formatRelative, cn } from '@/lib/utils'
 import type { Decision, Lead } from '@/types'
 
@@ -69,6 +70,7 @@ export default async function SalesPage() {
         {/* Lead List */}
         <div className="space-y-3">
           <h2 className="text-white font-semibold text-sm uppercase tracking-widest">All Leads</h2>
+          <AddLeadForm />
           <div className="space-y-2 max-h-[600px] overflow-y-auto pr-1">
             {leads.map(lead => (
               <div key={lead.id} className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-4">
