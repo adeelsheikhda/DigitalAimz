@@ -78,10 +78,7 @@ CREATE TABLE IF NOT EXISTS invoices (
   invoice_number TEXT UNIQUE,
   items JSONB DEFAULT '[]',
   ai_flag TEXT,
-  days_overdue INTEGER GENERATED ALWAYS AS (
-    CASE WHEN due_date < CURRENT_DATE AND status NOT IN ('paid')
-    THEN (CURRENT_DATE - due_date) ELSE 0 END
-  ) STORED,
+  days_overdue INTEGER DEFAULT 0,
   created_at TIMESTAMPTZ DEFAULT now()
 );
 
