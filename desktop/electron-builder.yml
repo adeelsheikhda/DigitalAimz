@@ -1,0 +1,35 @@
+appId: com.digitalaimz.seoleados
+productName: SEO Lead OS
+copyright: Copyright © DigitalAimz
+
+directories:
+  output: dist
+  buildResources: build
+
+# Bundle the portal assets so the desktop app works without a redeploy.
+extraResources:
+  - from: ../web
+    to: web
+    filter:
+      - "**/*"
+
+files:
+  - main.js
+  - preload.js
+  - settings.html
+  - package.json
+
+# To use a custom app icon, drop a 256x256 build/icon.ico and add
+#   icon: build/icon.ico
+# under `win:` below. Without it, electron-builder uses the default icon.
+win:
+  target:
+    - nsis
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: SEO Lead OS

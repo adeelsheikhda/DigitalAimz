@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in · SEO Lead OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="login-wrap">
+  <div class="login-card">
+    <div class="login-logo-top">SEO Lead OS</div>
+    <div class="login-logo-name">Sign in</div>
+
+    <div class="form-group" style="margin-bottom:12px">
+      <label class="form-label">Email</label>
+      <input class="form-input" id="email" type="email" placeholder="you@agency.com" autocomplete="email" />
+    </div>
+    <div class="form-group" style="margin-bottom:16px">
+      <label class="form-label">Password</label>
+      <input class="form-input" id="password" type="password" placeholder="••••••••" autocomplete="current-password" />
+    </div>
+
+    <button class="btn btn-primary" id="signinBtn" style="width:100%;justify-content:center">Sign in →</button>
+    <div class="login-error" id="loginError"></div>
+
+    <div class="login-alt">
+      <a id="magicLink">Email me a magic link instead</a>
+    </div>
+    <div class="login-alt" style="margin-top:6px">
+      <span>No account?</span> <a id="signupLink">Create one</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script type="module">
+  import { supabase, CONFIG_READY } from "./js/supabaseClient.js";
+
+  const err = document.getElementById("loginError");
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+
+  if (!CONFIG_READY) {
+    err.textContent = "Supabase not configured — edit web/js/config.js (see docs/SETUP.md).";
+  }
+
+  // Already signed in? Go straight to the app.
+  supabase.auth.getSession().then(({ data }) => {
+    if (data.session) window.location.replace("index.html");
+  });
+
+  function show(msg) { err.style.color = "var(--critical)"; err.textContent = msg; }
+  function ok(msg) { err.style.color = "var(--accent3)"; err.textContent = msg; }
+
+  document.getElementById("signinBtn").addEventListener("click", async () => {
+    const { error } = await supabase.auth.signInWithPassword({
+      email: email.value.trim(),
+      password: password.value,
+    });
+    if (error) return show(error.message);
+    window.location.replace("index.html");
+  });
+
+  document.getElementById("signupLink").addEventListener("click", async () => {
+    if (!email.value.trim() || !password.value) return show("Enter email + password to sign up.");
+    const { error } = await supabase.auth.signUp({
+      email: email.value.trim(),
+      password: password.value,
+    });
+    if (error) return show(error.message);
+    ok("Account created. Check your email to confirm, then sign in.");
+  });
+
+  document.getElementById("magicLink").addEventListener("click", async () => {
+    if (!email.value.trim()) return show("Enter your email first.");
+    const { error } = await supabase.auth.signInWithOtp({
+      email: email.value.trim(),
+      options: { emailRedirectTo: window.location.origin + "/index.html" },
+    });
+    if (error) return show(error.message);
+    ok("Magic link sent — check your inbox.");
+  });
+
+  password.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") document.getElementById("signinBtn").click();
+  });
+</script>
+</body>
+</html>

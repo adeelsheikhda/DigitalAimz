@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SEO Lead OS — Setup</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#f5f3ee;color:#1a1814;margin:0;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;}
+  .card{background:#fff;border:1.5px solid #e8e4db;border-radius:18px;padding:36px 32px;
+    width:100%;max-width:440px;box-shadow:0 8px 32px rgba(26,24,20,.12);}
+  h1{font-size:22px;margin:0 0 4px;}
+  p{font-size:13px;color:#8c8679;margin:0 0 22px;line-height:1.5;}
+  label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;
+    letter-spacing:.08em;color:#8c8679;margin:14px 0 6px;}
+  input{width:100%;box-sizing:border-box;padding:10px 12px;border:1.5px solid #e8e4db;
+    border-radius:8px;font-size:13px;outline:none;}
+  input:focus{border-color:#d4522a;}
+  button{margin-top:22px;width:100%;padding:11px;border:none;border-radius:8px;
+    background:#d4522a;color:#fff;font-weight:700;font-size:13px;cursor:pointer;
+    text-transform:uppercase;letter-spacing:.04em;}
+  button:hover{background:#c0451f;}
+  .hint{font-size:11px;color:#8c8679;margin-top:14px;}
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Connect to your workspace</h1>
+    <p>Enter your Supabase project details (from Project Settings → API). These are stored locally on this PC. See docs/SETUP.md.</p>
+    <label>Supabase Project URL</label>
+    <input id="url" placeholder="https://xxxx.supabase.co" />
+    <label>Supabase anon public key</label>
+    <input id="key" placeholder="eyJhbGci..." />
+    <button id="save">Save &amp; continue →</button>
+    <div class="hint">The anon key is safe to store on the client — your data is protected by Row Level Security.</div>
+  </div>
+  <script>
+    document.getElementById("save").addEventListener("click", async () => {
+      const url = document.getElementById("url").value;
+      const key = document.getElementById("key").value;
+      if (!url || !key) { alert("Both fields are required."); return; }
+      await window.desktopAPI.saveConfig(url, key);
+    });
+  </script>
+</body>
+</html>

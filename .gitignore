@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Desktop build output
+desktop/dist/
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# OS / editor
+.DS_Store
+*.log
+.env
+.env.*

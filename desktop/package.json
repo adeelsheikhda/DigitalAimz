@@ -1,0 +1,20 @@
+{
+  "name": "seo-lead-os-desktop",
+  "version": "1.0.0",
+  "description": "SEO Lead OS — native Windows desktop app",
+  "author": "DigitalAimz",
+  "license": "MIT",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win",
+    "dist:dir": "electron-builder --win --dir"
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  }
+}

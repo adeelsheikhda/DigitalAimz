@@ -1,0 +1,11 @@
+# Supabase CLI project config. `project_id` is set by `supabase link`.
+project_id = "seo-lead-os"
+
+[functions.sync-trello]
+verify_jwt = true
+
+[functions.sync-clickup]
+verify_jwt = true
+
+[functions.sync-google-tasks]
+verify_jwt = true

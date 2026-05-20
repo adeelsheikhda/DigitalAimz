@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Lead OS</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="shell">
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+  <div class="logo">
+    <div class="logo-top">SEO Lead OS</div>
+    <div class="logo-name">Command<br>Center</div>
+    <div class="logo-role">▲ Team Lead</div>
+  </div>
+  <div class="nav">
+    <div class="nav-section">Command</div>
+    <div class="nav-item active" onclick="showView('dashboard')"><div class="nav-dot"></div> Dashboard</div>
+    <div class="nav-item" onclick="showView('projects')"><div class="nav-dot"></div> Projects</div>
+    <div class="nav-item" onclick="showView('moneypages')"><div class="nav-dot"></div> Money Pages</div>
+    <div class="nav-section">Team</div>
+    <div class="nav-item" onclick="showView('tasks')"><div class="nav-dot"></div> Task Board</div>
+    <div class="nav-item" onclick="showView('assign')"><div class="nav-dot"></div> Assign Tasks</div>
+    <div class="nav-item" onclick="showView('team')"><div class="nav-dot"></div> Team Load</div>
+    <div class="nav-section">Strategy</div>
+    <div class="nav-item" onclick="showView('matrix')"><div class="nav-dot"></div> 80/20 Matrix</div>
+    <div class="nav-item" onclick="showView('brief')"><div class="nav-dot"></div> Daily Brief</div>
+    <div class="nav-item" onclick="showView('integrations')"><div class="nav-dot"></div> Integrations</div>
+  </div>
+  <div class="sidebar-footer">
+    <div class="user-row">
+      <div>
+        <div class="user-name" id="userName">…</div>
+        <div class="user-email" id="userEmail"></div>
+      </div>
+    </div>
+    <div class="day-badge" id="todayLabel">Loading...</div>
+    <div class="logout-link" data-action="logout" style="margin-top:8px">Log out</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- ── DASHBOARD ── -->
+  <div class="view active" id="view-dashboard">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Command Center</div>
+        <div class="page-sub"><span class="live-dot"></span>Live overview across all projects</div>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="showView('assign')">+ Assign Task</button>
+    </div>
+
+    <div class="metrics-row">
+      <div class="metric-card mc-accent">
+        <div class="metric-label">Active Projects</div>
+        <div class="metric-value" id="projCountMetric">—</div>
+        <div class="metric-sub" id="projCritMetric">—</div>
+      </div>
+      <div class="metric-card mc-blue">
+        <div class="metric-label">Tasks Today</div>
+        <div class="metric-value" id="taskCountMetric">—</div>
+        <div class="metric-sub"><span id="doneCountMetric">0</span> completed</div>
+      </div>
+      <div class="metric-card mc-green">
+        <div class="metric-label">Money Pages</div>
+        <div class="metric-value" id="mpCountMetric">—</div>
+        <div class="metric-sub" id="mpDropMetric">—</div>
+      </div>
+      <div class="metric-card mc-warn">
+        <div class="metric-label">Team Members</div>
+        <div class="metric-value" id="teamCountMetric">—</div>
+        <div class="metric-sub" id="teamOverMetric">—</div>
+      </div>
+    </div>
+
+    <div class="focus-band">
+      <div class="focus-icon">🎯</div>
+      <div>
+        <div class="focus-title">Today's 80/20 Focus</div>
+        <div class="focus-sub">These actions drive 80% of this week's results</div>
+      </div>
+      <div class="focus-tags">
+        <span class="focus-tag">Fix /services drop</span>
+        <span class="focus-tag">Airport DE links</span>
+        <span class="focus-tag">Packaging meta</span>
+        <span class="focus-tag">GSC crawl errors</span>
+      </div>
+    </div>
+
+    <div class="grid-65">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Active Projects</span>
+          <span class="card-badge cb-warn">running</span>
+        </div>
+        <div id="dashProjects"></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px;">
+        <div class="card">
+          <div class="card-header"><span class="card-title">Team Load</span></div>
+          <table class="team-table"><tbody id="teamLoadMini"></tbody></table>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Quick Win</span>
+            <span class="card-badge cb-green">Do Now</span>
+          </div>
+          <div style="font-size:13px;line-height:1.7;color:var(--muted);">
+            <strong style="color:var(--text);">/services page</strong> dropped from pos 4→9 in 7 days.<br>
+            Fix: Update title tag + add 200-word FAQ section.<br>
+            <strong style="color:var(--accent3);">Est. impact: +3 positions in 14 days.</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PROJECTS ── -->
+  <div class="view" id="view-projects">
+    <div class="page-header">
+      <div>
+        <div class="page-title">All Projects</div>
+        <div class="page-sub">Priority-ranked. Critical first.</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;" id="projectsList"></div>
+  </div>
+
+  <!-- ── MONEY PAGES ── -->
+  <div class="view" id="view-moneypages">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Money Pages</div>
+        <div class="page-sub">Your 20% of pages driving 80% of revenue. Protect these.</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Priority Money Pages</span>
+        <span class="card-badge cb-blue">sorted by revenue impact</span>
+      </div>
+      <div id="moneyPagesList"></div>
+    </div>
+  </div>
+
+  <!-- ── TASK BOARD ── -->
+  <div class="view" id="view-tasks">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Task Board</div>
+        <div class="page-sub">Toggle done, delegate (reassign), or delete. Live across devices.</div>
+      </div>
+      <button class="btn btn-primary btn-sm" onclick="showView('assign')">+ New Task</button>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header"><span class="card-title">🔴 Critical / Today</span><span class="card-badge cb-red" id="criticalCount">—</span></div>
+        <div id="taskListCritical"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">🟡 High / This Week</span><span class="card-badge cb-warn" id="highCount">—</span></div>
+        <div id="taskListHigh"></div>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-header"><span class="card-title">🔵 In Progress</span><span class="card-badge cb-blue" id="progressCount">—</span></div>
+        <div id="taskListProgress"></div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">✅ Completed</span><span class="card-badge cb-green" id="doneCount">—</span></div>
+        <div id="taskListDone"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ASSIGN ── -->
+  <div class="view" id="view-assign">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Assign Task</div>
+        <div class="page-sub">Add new task to a team member with priority and project.</div>
+      </div>
+    </div>
+    <div class="card" style="max-width:700px;">
+      <div class="assign-form" id="assignForm">
+        <div class="form-group full">
+          <label class="form-label">Task Description</label>
+          <input class="form-input" id="f-title" placeholder="e.g. Fix title tags on /services page" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Assign To</label>
+          <select class="form-select" id="f-assign"></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Project</label>
+          <select class="form-select" id="f-project"></select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Priority</label>
+          <select class="form-select" id="f-priority">
+            <option value="critical">🔴 Critical</option>
+            <option value="high">🟡 High</option>
+            <option value="progress">🔵 In Progress</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Task Type</label>
+          <select class="form-select" id="f-type">
+            <option value="t-tech">Technical SEO</option>
+            <option value="t-content">Content</option>
+            <option value="t-audit">Audit</option>
+            <option value="t-link">Link Building</option>
+            <option value="t-report">Reporting</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Due</label>
+          <input class="form-input" id="f-due" type="text" placeholder="e.g. Today, Fri, 12 Apr" />
+        </div>
+        <div class="form-group full">
+          <label class="form-label">Notes (optional)</label>
+          <textarea class="form-textarea" id="f-notes" placeholder="Extra context, links, or specific instructions..."></textarea>
+        </div>
+        <div class="form-footer">
+          <button class="btn btn-ghost btn-sm" onclick="resetForm()">Clear</button>
+          <button class="btn btn-primary btn-sm" onclick="addTask()">Assign Task →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TEAM LOAD ── -->
+  <div class="view" id="view-team">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Team Load</div>
+        <div class="page-sub">Capacity overview. Don't overload. Balance for speed.</div>
+      </div>
+    </div>
+    <div class="card">
+      <table class="team-table">
+        <thead><tr><th>Member</th><th>Role</th><th>Tasks</th><th>Load</th><th>Status</th><th>Focus Project</th></tr></thead>
+        <tbody id="teamTableFull"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── 80/20 MATRIX ── -->
+  <div class="view" id="view-matrix">
+    <div class="page-header">
+      <div>
+        <div class="page-title">80/20 Priority Matrix</div>
+        <div class="page-sub">Do Q1 first. Delegate Q2. Schedule Q3. Eliminate Q4.</div>
+      </div>
+    </div>
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div class="card">
+        <div style="font-size:13px;line-height:1.8;color:var(--muted);">
+          <strong style="color:var(--text);font-size:15px;">The Rule as Team Lead:</strong><br>
+          20% of your SEO tasks drive 80% of ranking results.<br>
+          20% of your pages drive 80% of revenue.<br>
+          20% of your team effort drives 80% of client value.<br><br>
+          <strong style="color:var(--accent);">Your job = find that 20% every Monday and build the whole week around it.</strong>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:13px;line-height:1.8;color:var(--muted);">
+          <strong style="color:var(--text);font-size:15px;">Weekly Rhythm:</strong><br>
+          <strong style="color:var(--text);">Mon:</strong> Pull GSC drops → assign fixes<br>
+          <strong style="color:var(--text);">Tue–Thu:</strong> Team executes. You unblock.<br>
+          <strong style="color:var(--text);">Fri:</strong> Review wins + set next week's focus<br><br>
+          <strong style="color:var(--accent3);">Block 90 min Mon morning. This is your highest leverage hour.</strong>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><span class="card-title">SEO Work Priority Matrix</span></div>
+      <div class="matrix-wrap">
+        <div class="matrix-quad q1">
+          <div class="mq-label">Q1 — DO FIRST (High Impact, Easy Win)</div>
+          <div class="mq-items">
+            <div class="mq-item"><div class="mq-dot"></div>Fix title/meta on money pages dropping</div>
+            <div class="mq-item"><div class="mq-dot"></div>Resolve GSC crawl errors on key URLs</div>
+            <div class="mq-item"><div class="mq-dot"></div>Add internal links to ranking pages</div>
+            <div class="mq-item"><div class="mq-dot"></div>Pos 5–15 pages with 1k+ impressions</div>
+            <div class="mq-item"><div class="mq-dot"></div>Update outdated content (year, stats)</div>
+          </div>
+        </div>
+        <div class="matrix-quad q2">
+          <div class="mq-label">Q2 — DELEGATE (High Impact, Hard Work)</div>
+          <div class="mq-items">
+            <div class="mq-item"><div class="mq-dot"></div>Full technical audit + fix implementation</div>
+            <div class="mq-item"><div class="mq-dot"></div>New long-form content creation</div>
+            <div class="mq-item"><div class="mq-dot"></div>Link building outreach campaigns</div>
+            <div class="mq-item"><div class="mq-dot"></div>Core Web Vitals optimisation (dev task)</div>
+            <div class="mq-item"><div class="mq-dot"></div>Schema markup implementation</div>
+          </div>
+        </div>
+        <div class="matrix-quad q3">
+          <div class="mq-label">Q3 — SCHEDULE (Low Impact, Easy)</div>
+          <div class="mq-items">
+            <div class="mq-item"><div class="mq-dot"></div>Weekly client reports</div>
+            <div class="mq-item"><div class="mq-dot"></div>Social signals / minor off-page tasks</div>
+            <div class="mq-item"><div class="mq-dot"></div>Image alt text bulk updates</div>
+            <div class="mq-item"><div class="mq-dot"></div>Sitemap resubmission (routine)</div>
+            <div class="mq-item"><div class="mq-dot"></div>Minor blog meta optimisation</div>
+          </div>
+        </div>
+        <div class="matrix-quad q4">
+          <div class="mq-label">Q4 — ELIMINATE (Low Impact, Hard)</div>
+          <div class="mq-items">
+            <div class="mq-item"><div class="mq-dot"></div>Chasing DA 5 backlinks</div>
+            <div class="mq-item"><div class="mq-dot"></div>Optimising pages with 0 impressions</div>
+            <div class="mq-item"><div class="mq-dot"></div>Redesigning pages with good rankings</div>
+            <div class="mq-item"><div class="mq-dot"></div>Keyword research for zero-vol terms</div>
+            <div class="mq-item"><div class="mq-dot"></div>Manual disavow for low-risk links</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DAILY BRIEF ── -->
+  <div class="view" id="view-brief">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Daily Brief</div>
+        <div class="page-sub">Your 15-min morning standup checklist. Run this every day before 10am.</div>
+      </div>
+    </div>
+    <div class="grid-65">
+      <div>
+        <div class="brief-block">
+          <div class="brief-time">08:30 — MONDAY (5 min)</div>
+          <div class="brief-text">
+            <strong>1. Open GSC →</strong> Filter last 7 days vs prev 7 days. Identify any page that dropped 2+ positions.<br>
+            <strong>2. Flag money pages</strong> with position change. These go to top of task board immediately.<br>
+            <strong>3. Check crawl coverage</strong> — any new errors since last week?
+          </div>
+        </div>
+        <div class="brief-block">
+          <div class="brief-time">DAILY — Every Morning (5 min)</div>
+          <div class="brief-text">
+            <strong>Check your team:</strong> Did yesterday's tasks get done?<br>
+            <strong>Unblock anyone</strong> waiting on you for approvals or content.<br>
+            <strong>Re-prioritise</strong> if a project had a sudden ranking change overnight.<br>
+            <strong>One Slack message</strong> to the team with today's top 3 focus items.
+          </div>
+        </div>
+        <div class="brief-block">
+          <div class="brief-time">FRIDAY — Weekly Wrap (10 min)</div>
+          <div class="brief-text">
+            <strong>Record wins:</strong> Which tasks moved rankings?<br>
+            <strong>Record failures:</strong> What took time with no result? Cut it.<br>
+            <strong>Set next week's Q1</strong> — your 3 highest-impact tasks.<br>
+            <strong>Send client report</strong> for critical projects.
+          </div>
+        </div>
+        <div class="brief-block">
+          <div class="brief-time">TEAM LEAD RULE — Always</div>
+          <div class="brief-text">
+            <strong style="color:var(--accent);">You don't do execution. You direct it.</strong><br>
+            Your job is: assign → unblock → review → decide.<br>
+            If you're spending hours on 1 task yourself, you're operating as an individual contributor, not a lead.<br>
+            <strong>Protect your time</strong> for strategy and decisions only.
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Daily Checklist</span></div>
+          <div id="dailyCheckList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── INTEGRATIONS ── -->
+  <div class="view" id="view-integrations">
+    <div class="page-header">
+      <div>
+        <div class="page-title">Integrations</div>
+        <div class="page-sub">Mirror your tasks into Trello, ClickUp, or Google Tasks. Configure credentials in Supabase (see docs/INTEGRATIONS.md).</div>
+      </div>
+    </div>
+    <div id="integrationsList"></div>
+  </div>
+
+</main>
+</div>
+
+<div class="toast" id="toast">✓ Task assigned</div>
+
+<script src="js/config.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
