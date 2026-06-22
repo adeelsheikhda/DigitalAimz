@@ -1,0 +1,1229 @@
+<!-- ============================================================
+   LASER HAIR REMOVAL FOR MEN — Halcyon Aesthetics Dubai
+   Paste this entire block into WordPress ▶ Pages ▶ Edit ▶
+   "Custom HTML" block  (or switch editor to "Code Editor")
+   ============================================================ -->
+
+<style>
+/* ── Reset & Base ───────────────────────────────────────────── */
+.hlc-wrap *{box-sizing:border-box;margin:0;padding:0}
+.hlc-wrap{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  color:#1A1A1A;
+  background:#FAF8F4;
+  overflow-x:hidden;
+  line-height:1.7;
+}
+.hlc-wrap a{text-decoration:none;color:inherit}
+.hlc-wrap img{max-width:100%;display:block}
+
+/* ── CSS Variables ──────────────────────────────────────────── */
+.hlc-wrap{
+  --gold:        #C4A862;
+  --gold-dark:   #9E7F3E;
+  --gold-light:  #F0E8D5;
+  --cream:       #FAF8F4;
+  --cream-deep:  #F2EDE4;
+  --charcoal:    #1A1A1A;
+  --mid:         #4A4A4A;
+  --subtle:      #7A7A7A;
+  --border:      #E2D9CC;
+  --white:       #FFFFFF;
+  --radius:      4px;
+  --shadow:      0 4px 32px rgba(0,0,0,.07);
+  --shadow-sm:   0 2px 12px rgba(0,0,0,.05);
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+.hlc-wrap h1,.hlc-wrap h2,.hlc-wrap h3,.hlc-wrap h4{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-weight:600;
+  line-height:1.2;
+  color:var(--charcoal);
+}
+.hlc-wrap p{color:var(--mid);font-size:1.05rem;line-height:1.8}
+.hlc-wrap .hlc-sans{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
+
+/* ── Utility ────────────────────────────────────────────────── */
+.hlc-container{max-width:1140px;margin:0 auto;padding:0 24px}
+.hlc-section{padding:88px 0}
+.hlc-section-alt{background:var(--cream-deep)}
+.hlc-eyebrow{
+  display:inline-block;
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.68rem;
+  font-weight:700;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--gold-dark);
+  margin-bottom:14px;
+}
+.hlc-eyebrow::before,.hlc-eyebrow::after{
+  content:'';display:inline-block;width:28px;height:1px;
+  background:var(--gold);vertical-align:middle;
+}
+.hlc-eyebrow::before{margin-right:10px}
+.hlc-eyebrow::after{margin-left:10px}
+.hlc-section-title{font-size:clamp(1.9rem,3.5vw,2.8rem);margin-bottom:16px}
+.hlc-section-sub{font-size:1.05rem;color:var(--subtle);max-width:560px}
+.hlc-center{text-align:center}
+.hlc-center .hlc-section-sub{margin:0 auto}
+.hlc-divider{
+  width:52px;height:2px;background:var(--gold);
+  margin:20px auto 0;
+}
+.hlc-divider-left{margin-left:0}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.hlc-btn{
+  display:inline-block;
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  padding:15px 38px;
+  border-radius:var(--radius);
+  transition:all .3s ease;
+  cursor:pointer;
+  border:none;
+}
+.hlc-btn-primary{
+  background:var(--gold);
+  color:var(--white);
+  box-shadow:0 4px 18px rgba(196,168,98,.35);
+}
+.hlc-btn-primary:hover{background:var(--gold-dark);transform:translateY(-2px);box-shadow:0 6px 24px rgba(196,168,98,.45)}
+.hlc-btn-outline{
+  background:transparent;
+  color:var(--white);
+  border:1.5px solid rgba(255,255,255,.65);
+}
+.hlc-btn-outline:hover{background:rgba(255,255,255,.12);border-color:var(--white)}
+.hlc-btn-outline-dark{
+  background:transparent;
+  color:var(--charcoal);
+  border:1.5px solid var(--gold);
+}
+.hlc-btn-outline-dark:hover{background:var(--gold);color:var(--white)}
+
+/* ══════════════════════════════════════════════════════════════
+   1. HERO
+══════════════════════════════════════════════════════════════ */
+.hlc-hero{
+  position:relative;
+  min-height:92vh;
+  display:flex;align-items:center;
+  background:linear-gradient(125deg,#0D0D0D 0%,#1C1510 50%,#0D0D0D 100%);
+  overflow:hidden;
+}
+.hlc-hero-overlay{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 50%, rgba(196,168,98,.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4A862' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hlc-hero-content{position:relative;z-index:2;max-width:680px}
+.hlc-hero .hlc-eyebrow{color:var(--gold)}
+.hlc-hero .hlc-eyebrow::before,.hlc-hero .hlc-eyebrow::after{background:var(--gold)}
+.hlc-hero h1{
+  font-size:clamp(2.4rem,5.5vw,4.2rem);
+  color:var(--white);
+  margin-bottom:22px;
+  font-weight:400;
+}
+.hlc-hero h1 span{color:var(--gold);font-style:italic}
+.hlc-hero p{color:rgba(255,255,255,.72);font-size:1.1rem;max-width:520px;margin-bottom:38px}
+.hlc-hero-badges{
+  display:flex;flex-wrap:wrap;gap:18px;
+  margin-top:52px;padding-top:40px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+.hlc-hero-badge{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.72rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+}
+.hlc-hero-badge svg{flex-shrink:0;opacity:.85}
+.hlc-hero-btns{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* ══════════════════════════════════════════════════════════════
+   2. TRUST BAR
+══════════════════════════════════════════════════════════════ */
+.hlc-trust-bar{
+  background:var(--charcoal);
+  padding:28px 0;
+}
+.hlc-trust-inner{
+  display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:center;
+  gap:12px 40px;
+}
+.hlc-trust-item{
+  display:flex;align-items:center;gap:10px;
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.7rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.7);
+}
+.hlc-trust-item strong{color:var(--gold)}
+.hlc-trust-sep{color:rgba(255,255,255,.2);font-size:1.2rem}
+
+/* ══════════════════════════════════════════════════════════════
+   3. WHY LASER FOR MEN
+══════════════════════════════════════════════════════════════ */
+.hlc-benefits-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+  margin-top:60px;
+}
+.hlc-benefit-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:36px 30px;
+  transition:all .3s ease;
+  position:relative;overflow:hidden;
+}
+.hlc-benefit-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;
+  height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s ease;
+}
+.hlc-benefit-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.hlc-benefit-card:hover::before{transform:scaleX(1)}
+.hlc-benefit-icon{
+  width:52px;height:52px;
+  background:var(--gold-light);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:22px;
+}
+.hlc-benefit-card h3{font-size:1.2rem;margin-bottom:10px}
+.hlc-benefit-card p{font-size:.93rem;color:var(--subtle)}
+
+/* ══════════════════════════════════════════════════════════════
+   4. TREATMENT AREAS
+══════════════════════════════════════════════════════════════ */
+.hlc-areas-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:64px;
+  align-items:start;
+  margin-top:56px;
+}
+.hlc-areas-intro p{font-size:1.05rem;margin-bottom:18px}
+.hlc-areas-intro .hlc-btn{margin-top:16px}
+.hlc-areas-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.hlc-area-pill{
+  display:flex;align-items:center;gap:12px;
+  padding:15px 18px;
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.8rem;font-weight:500;
+  color:var(--charcoal);
+  transition:all .25s ease;
+}
+.hlc-area-pill:hover{border-color:var(--gold);background:var(--gold-light);color:var(--gold-dark)}
+.hlc-area-pill svg{color:var(--gold);flex-shrink:0}
+
+/* ══════════════════════════════════════════════════════════════
+   5. HOW IT WORKS
+══════════════════════════════════════════════════════════════ */
+.hlc-steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:0;
+  margin-top:60px;
+  position:relative;
+}
+.hlc-steps::before{
+  content:'';position:absolute;
+  top:40px;left:calc(100%/10);right:calc(100%/10);
+  height:1px;background:var(--border);
+  z-index:0;
+}
+.hlc-step{
+  text-align:center;padding:0 20px;
+  position:relative;z-index:1;
+}
+.hlc-step-num{
+  width:80px;height:80px;
+  background:var(--white);
+  border:1.5px solid var(--gold);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:1.8rem;font-weight:600;color:var(--gold-dark);
+  box-shadow:0 0 0 8px var(--cream-deep);
+}
+.hlc-step h4{font-size:1rem;margin-bottom:8px}
+.hlc-step p{font-size:.87rem;color:var(--subtle)}
+
+/* ══════════════════════════════════════════════════════════════
+   6. TECHNOLOGY STRIP
+══════════════════════════════════════════════════════════════ */
+.hlc-tech{
+  background:linear-gradient(135deg,#0D0D0D 0%,#1A1410 100%);
+  padding:80px 0;
+}
+.hlc-tech-layout{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:72px;align-items:center;
+}
+.hlc-tech-text .hlc-eyebrow{color:var(--gold)}
+.hlc-tech-text .hlc-eyebrow::before,.hlc-tech-text .hlc-eyebrow::after{background:var(--gold)}
+.hlc-tech-text h2{color:var(--white);margin-bottom:18px}
+.hlc-tech-text p{color:rgba(255,255,255,.68);margin-bottom:16px}
+.hlc-tech-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.hlc-tech-chip{
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.68rem;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:8px 18px;
+  border:1px solid rgba(196,168,98,.4);
+  border-radius:100px;
+  color:var(--gold);
+}
+.hlc-tech-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.hlc-stat-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(196,168,98,.2);
+  border-radius:var(--radius);
+  padding:28px 22px;
+  text-align:center;
+}
+.hlc-stat-num{
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:2.8rem;font-weight:600;
+  color:var(--gold);line-height:1;
+  margin-bottom:8px;
+}
+.hlc-stat-label{
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.68rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.5);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   7. PRICING TABLE
+══════════════════════════════════════════════════════════════ */
+.hlc-pricing-tabs{
+  display:flex;justify-content:center;
+  gap:4px;
+  background:var(--cream-deep);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:5px;
+  margin:48px auto 0;
+  max-width:420px;
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+}
+.hlc-ptab{
+  flex:1;text-align:center;
+  padding:11px 20px;
+  font-size:.72rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;
+  border-radius:2px;
+  cursor:pointer;
+  transition:all .25s ease;
+  color:var(--subtle);
+  border:none;background:transparent;
+}
+.hlc-ptab.active{
+  background:var(--white);
+  color:var(--charcoal);
+  box-shadow:var(--shadow-sm);
+}
+.hlc-pricing-panel{display:none}
+.hlc-pricing-panel.active{display:block}
+.hlc-pricing-table{
+  width:100%;border-collapse:collapse;
+  margin-top:40px;
+  background:var(--white);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.hlc-pricing-table thead tr{
+  background:var(--charcoal);
+}
+.hlc-pricing-table thead th{
+  padding:18px 22px;
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.68rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.75);
+  text-align:left;
+}
+.hlc-pricing-table thead th:last-child{text-align:right;color:var(--gold)}
+.hlc-pricing-table tbody tr{
+  border-bottom:1px solid var(--border);
+  transition:background .2s ease;
+}
+.hlc-pricing-table tbody tr:last-child{border-bottom:none}
+.hlc-pricing-table tbody tr:hover{background:var(--gold-light)}
+.hlc-pricing-table tbody tr.hlc-tr-highlight{background:#FDFAF4}
+.hlc-pricing-table td{
+  padding:17px 22px;
+  font-size:.95rem;color:var(--charcoal);
+}
+.hlc-pricing-table td:last-child{
+  text-align:right;
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.95rem;font-weight:700;color:var(--gold-dark);
+  white-space:nowrap;
+}
+.hlc-pricing-table td .hlc-area-tag{
+  display:inline-block;
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.6rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:2px 8px;border-radius:100px;
+  margin-left:8px;vertical-align:middle;
+}
+.hlc-tag-small{background:#EAF4F0;color:#2A7A5A}
+.hlc-tag-medium{background:#EEF0FA;color:#3A4FA8}
+.hlc-tag-large{background:#FEF4E8;color:#B05A10}
+.hlc-tag-full{background:#FDE8EF;color:#A01840}
+.hlc-pricing-note{
+  margin-top:22px;
+  padding:18px 22px;
+  background:var(--gold-light);
+  border-left:3px solid var(--gold);
+  border-radius:var(--radius);
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.78rem;color:var(--gold-dark);
+}
+.hlc-pricing-cta-row{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
+  margin-top:40px;
+  padding:30px 34px;
+  background:var(--charcoal);
+  border-radius:var(--radius);
+}
+.hlc-pricing-cta-row p{color:rgba(255,255,255,.75);font-size:.92rem;margin:0}
+.hlc-pricing-cta-row strong{color:var(--white)}
+
+/* ══════════════════════════════════════════════════════════════
+   8. RESULTS / SOCIAL PROOF
+══════════════════════════════════════════════════════════════ */
+.hlc-results-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;margin-top:60px;
+}
+.hlc-result-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:36px 28px;
+  position:relative;
+}
+.hlc-result-card::before{
+  content:'\201C';
+  position:absolute;top:18px;left:24px;
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:5rem;line-height:1;color:var(--gold-light);
+  z-index:0;
+}
+.hlc-result-stars{
+  display:flex;gap:3px;margin-bottom:16px;
+}
+.hlc-result-star{color:var(--gold);font-size:1rem}
+.hlc-result-card p{
+  font-size:.95rem;color:var(--mid);
+  line-height:1.75;margin-bottom:22px;
+  position:relative;z-index:1;
+}
+.hlc-result-author{
+  display:flex;align-items:center;gap:14px;
+}
+.hlc-result-avatar{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--gold-light);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:1.2rem;font-weight:600;color:var(--gold-dark);
+  flex-shrink:0;
+}
+.hlc-result-meta{font-family:'Montserrat','Helvetica Neue',Arial,sans-serif}
+.hlc-result-name{font-size:.8rem;font-weight:700;color:var(--charcoal)}
+.hlc-result-area{font-size:.7rem;color:var(--subtle);margin-top:2px}
+
+/* ══════════════════════════════════════════════════════════════
+   9. FAQ
+══════════════════════════════════════════════════════════════ */
+.hlc-faq-layout{
+  display:grid;grid-template-columns:1fr 1.6fr;
+  gap:72px;align-items:start;
+  margin-top:56px;
+}
+.hlc-faq-sidebar h3{font-size:1.5rem;margin-bottom:14px}
+.hlc-faq-sidebar p{font-size:.95rem;color:var(--subtle);margin-bottom:28px}
+.hlc-faq-list{display:flex;flex-direction:column;gap:2px}
+.hlc-faq-item{
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--white);
+}
+.hlc-faq-q{
+  width:100%;text-align:left;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 22px;
+  background:none;border:none;cursor:pointer;
+  font-family:'Cormorant Garamond','Georgia',serif;
+  font-size:1.08rem;font-weight:600;color:var(--charcoal);
+  gap:16px;
+  transition:background .2s ease;
+}
+.hlc-faq-q:hover{background:var(--gold-light)}
+.hlc-faq-q.open{background:var(--gold-light);color:var(--gold-dark)}
+.hlc-faq-icon{
+  width:26px;height:26px;border-radius:50%;
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;transition:transform .3s ease;
+  color:var(--gold-dark);font-size:1.1rem;line-height:1;
+}
+.hlc-faq-q.open .hlc-faq-icon{transform:rotate(45deg);background:var(--gold);color:var(--white)}
+.hlc-faq-a{
+  max-height:0;overflow:hidden;
+  transition:max-height .4s ease,padding .3s ease;
+  padding:0 22px;
+}
+.hlc-faq-a.open{max-height:400px;padding:4px 22px 20px}
+.hlc-faq-a p{font-size:.95rem;color:var(--mid)}
+
+/* ══════════════════════════════════════════════════════════════
+   10. FINAL CTA BANNER
+══════════════════════════════════════════════════════════════ */
+.hlc-cta-banner{
+  background:linear-gradient(120deg,#111008 0%,#1E1800 40%,#100F0A 100%);
+  padding:96px 0;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.hlc-cta-banner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 50%,rgba(196,168,98,.1) 0%,transparent 70%);
+}
+.hlc-cta-banner .hlc-eyebrow{color:var(--gold)}
+.hlc-cta-banner .hlc-eyebrow::before,.hlc-cta-banner .hlc-eyebrow::after{background:var(--gold)}
+.hlc-cta-banner h2{font-size:clamp(2rem,4vw,3.2rem);color:var(--white);max-width:680px;margin:0 auto 18px}
+.hlc-cta-banner p{color:rgba(255,255,255,.65);max-width:480px;margin:0 auto 40px;font-size:1.05rem}
+.hlc-cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;position:relative;z-index:1}
+.hlc-cta-contacts{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:32px;
+  margin-top:52px;padding-top:40px;
+  border-top:1px solid rgba(255,255,255,.1);
+  position:relative;z-index:1;
+}
+.hlc-cta-contact-item{
+  font-family:'Montserrat','Helvetica Neue',Arial,sans-serif;
+  font-size:.75rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(255,255,255,.55);
+  display:flex;align-items:center;gap:10px;
+}
+.hlc-cta-contact-item a{color:var(--gold);transition:color .2s}
+.hlc-cta-contact-item a:hover{color:var(--white)}
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+@media(max-width:960px){
+  .hlc-areas-layout,.hlc-tech-layout,.hlc-faq-layout{
+    grid-template-columns:1fr;gap:40px;
+  }
+  .hlc-results-grid{grid-template-columns:1fr 1fr}
+  .hlc-steps::before{display:none}
+}
+@media(max-width:680px){
+  .hlc-section{padding:60px 0}
+  .hlc-results-grid{grid-template-columns:1fr}
+  .hlc-areas-grid{grid-template-columns:1fr}
+  .hlc-tech-stats{grid-template-columns:1fr 1fr}
+  .hlc-pricing-table thead th:nth-child(2),
+  .hlc-pricing-table td:nth-child(2){display:none}
+  .hlc-pricing-cta-row{flex-direction:column;text-align:center}
+  .hlc-trust-sep{display:none}
+  .hlc-trust-inner{gap:10px 20px}
+}
+</style>
+
+<div class="hlc-wrap">
+
+<!-- ════════════════════════════════════════════════════════════
+     1. HERO
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-hero">
+  <div class="hlc-hero-overlay"></div>
+  <div class="hlc-container">
+    <div class="hlc-hero-content">
+      <span class="hlc-eyebrow">Halcyon Aesthetics Dubai</span>
+      <h1>Permanent Laser Hair<br>Removal <span>for Men</span></h1>
+      <p>Say goodbye to daily shaving and painful waxing. Our clinically advanced Soprano Titanium laser delivers precise, pain-free, long-lasting hair reduction — for every skin tone.</p>
+      <div class="hlc-hero-btns">
+        <a href="/contact" class="hlc-btn hlc-btn-primary hlc-sans">Book a Free Consultation</a>
+        <a href="#pricing" class="hlc-btn hlc-btn-outline hlc-sans">View Pricing</a>
+      </div>
+      <div class="hlc-hero-badges">
+        <div class="hlc-hero-badge">
+          <svg width="16" height="16" fill="none" stroke="#C4A862" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          DHA Certified Clinic
+        </div>
+        <div class="hlc-hero-badge">
+          <svg width="16" height="16" fill="none" stroke="#C4A862" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          FDA-Approved Technology
+        </div>
+        <div class="hlc-hero-badge">
+          <svg width="16" height="16" fill="none" stroke="#C4A862" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          All Skin Tones Welcome
+        </div>
+        <div class="hlc-hero-badge">
+          <svg width="16" height="16" fill="none" stroke="#C4A862" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          Zero Downtime
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     2. TRUST BAR
+═════════════════════════════════════════════════════════════ -->
+<div class="hlc-trust-bar">
+  <div class="hlc-container">
+    <div class="hlc-trust-inner hlc-sans">
+      <div class="hlc-trust-item"><strong>20+</strong> Years Group Experience</div>
+      <span class="hlc-trust-sep">|</span>
+      <div class="hlc-trust-item"><strong>Soprano Titanium</strong> Laser Technology</div>
+      <span class="hlc-trust-sep">|</span>
+      <div class="hlc-trust-item">Led by <strong>Board-Certified Surgeon</strong></div>
+      <span class="hlc-trust-sep">|</span>
+      <div class="hlc-trust-item"><strong>DHA</strong> Licensed &amp; Regulated</div>
+      <span class="hlc-trust-sep">|</span>
+      <div class="hlc-trust-item">Starting from <strong>AED 70</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     3. WHY LASER FOR MEN
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-section">
+  <div class="hlc-container">
+    <div class="hlc-center">
+      <span class="hlc-eyebrow">The Smart Choice</span>
+      <h2 class="hlc-section-title">Why Men Choose Laser<br>Over Shaving &amp; Waxing</h2>
+      <div class="hlc-divider"></div>
+      <p class="hlc-section-sub" style="margin-top:18px;">Modern laser hair removal isn't just for women. More men than ever are choosing clinical precision over daily grooming frustration.</p>
+    </div>
+    <div class="hlc-benefits-grid">
+      <div class="hlc-benefit-card">
+        <div class="hlc-benefit-icon">
+          <svg width="22" height="22" fill="none" stroke="#9E7F3E" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Permanent Reduction</h3>
+        <p>After a full course of 6–8 sessions, most men achieve 85–95% permanent hair reduction — no more daily upkeep.</p>
+      </div>
+      <div class="hlc-benefit-card">
+        <div class="hlc-benefit-icon">
+          <svg width="22" height="22" fill="none" stroke="#9E7F3E" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>No More Ingrown Hairs</h3>
+        <p>Laser targets the follicle at the root, eliminating the ingrown hairs and razor bumps that plague men on the chest, back, and neck.</p>
+      </div>
+      <div class="hlc-benefit-card">
+        <div class="hlc-benefit-icon">
+          <svg width="22" height="22" fill="none" stroke="#9E7F3E" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3>Smoother Skin</h3>
+        <p>Sessions progressively refine skin texture on the back, chest, and shoulders — results that look and feel significantly better.</p>
+      </div>
+      <div class="hlc-benefit-card">
+        <div class="hlc-benefit-icon">
+          <svg width="22" height="22" fill="none" stroke="#9E7F3E" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Fast &amp; Pain-Free Sessions</h3>
+        <p>Our Soprano Titanium system uses in-motion cooling technology — treatments are virtually painless and take as little as 20 minutes.</p>
+      </div>
+      <div class="hlc-benefit-card">
+        <div class="hlc-benefit-icon">
+          <svg width="22" height="22" fill="none" stroke="#9E7F3E" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+        </div>
+        <h3>Works on All Skin Tones</h3>
+        <p>Unlike older systems, Soprano Titanium combines three laser wavelengths and is safe for Type I through VI skin — including Dubai's diverse population.</p>
+      </div>
+      <div class="hlc-benefit-card">
+        <div class="hlc-benefit-icon">
+          <svg width="22" height="22" fill="none" stroke="#9E7F3E" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Zero Downtime</h3>
+        <p>Return to work, the gym, or any activity immediately after your session. No recovery period, no social downtime whatsoever.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     4. TREATMENT AREAS
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-section hlc-section-alt">
+  <div class="hlc-container">
+    <div class="hlc-areas-layout">
+      <div class="hlc-areas-intro">
+        <span class="hlc-eyebrow">Coverage</span>
+        <h2 class="hlc-section-title">Men's Treatment Areas</h2>
+        <div class="hlc-divider hlc-divider-left" style="margin-bottom:24px"></div>
+        <p>From a clean beard line to a completely smooth back, we tailor every treatment to your specific goals. Each area is priced individually, so you only pay for what you need.</p>
+        <p>Our specialists will recommend the optimal number of sessions at your free consultation based on your hair type, skin tone, and treatment area.</p>
+        <a href="/contact" class="hlc-btn hlc-btn-primary hlc-sans" style="margin-top:28px">Get a Personalised Quote</a>
+      </div>
+      <div class="hlc-areas-grid">
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Beard &amp; Neck Line
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Chest
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Full Back
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Shoulders
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Abdomen
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Underarms
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Full Arms
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Full Legs
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Upper Lip &amp; Chin
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Ears &amp; Nose
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Buttocks
+        </div>
+        <div class="hlc-area-pill">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+          Full Body Package
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     5. HOW IT WORKS
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-section">
+  <div class="hlc-container">
+    <div class="hlc-center">
+      <span class="hlc-eyebrow">The Process</span>
+      <h2 class="hlc-section-title">Your Journey to Smooth Skin</h2>
+      <div class="hlc-divider"></div>
+    </div>
+    <div class="hlc-steps">
+      <div class="hlc-step">
+        <div class="hlc-step-num">01</div>
+        <h4>Free Consultation</h4>
+        <p>Our specialist assesses your skin tone, hair type, and goals — and designs a personalised treatment plan.</p>
+      </div>
+      <div class="hlc-step">
+        <div class="hlc-step-num">02</div>
+        <h4>Skin Preparation</h4>
+        <p>The area is gently cleansed and hair trimmed to the correct length. A cooling gel is applied for maximum comfort.</p>
+      </div>
+      <div class="hlc-step">
+        <div class="hlc-step-num">03</div>
+        <h4>Laser Treatment</h4>
+        <p>The Soprano Titanium handpiece glides across the skin, delivering calibrated laser energy to each follicle.</p>
+      </div>
+      <div class="hlc-step">
+        <div class="hlc-step-num">04</div>
+        <h4>Post-Care</h4>
+        <p>A soothing gel is applied. You receive aftercare instructions and your next appointment is booked.</p>
+      </div>
+      <div class="hlc-step">
+        <div class="hlc-step-num">05</div>
+        <h4>Ongoing Results</h4>
+        <p>Each session progressively reduces hair density. After 6–8 sessions, you enjoy long-lasting smoothness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     6. TECHNOLOGY SECTION
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-tech">
+  <div class="hlc-container">
+    <div class="hlc-tech-layout">
+      <div class="hlc-tech-text">
+        <span class="hlc-eyebrow">Medical-Grade Technology</span>
+        <h2>Soprano Titanium<br>Laser System</h2>
+        <p>The Soprano Titanium is the gold standard in laser hair removal — combining three laser wavelengths (Alexandrite 755nm, Diode 810nm, and Nd:YAG 1064nm) in a single system for unmatched coverage across all hair types and skin tones.</p>
+        <p>Its SHR (Super Hair Removal) in-motion technology heats hair follicles gradually to a safe but effective temperature, making treatments virtually painless — even on the most sensitive skin areas.</p>
+        <div class="hlc-tech-chips hlc-sans">
+          <span class="hlc-tech-chip">Alexandrite 755nm</span>
+          <span class="hlc-tech-chip">Diode 810nm</span>
+          <span class="hlc-tech-chip">Nd:YAG 1064nm</span>
+          <span class="hlc-tech-chip">SHR In-Motion</span>
+          <span class="hlc-tech-chip">Ice Cooling System</span>
+          <span class="hlc-tech-chip">FDA Approved</span>
+        </div>
+      </div>
+      <div class="hlc-tech-stats">
+        <div class="hlc-stat-card">
+          <div class="hlc-stat-num">95<span style="font-size:1.4rem">%</span></div>
+          <div class="hlc-stat-label">Average Hair Reduction</div>
+        </div>
+        <div class="hlc-stat-card">
+          <div class="hlc-stat-num">6–8</div>
+          <div class="hlc-stat-label">Sessions Recommended</div>
+        </div>
+        <div class="hlc-stat-card">
+          <div class="hlc-stat-num">20<span style="font-size:1.4rem">min</span></div>
+          <div class="hlc-stat-label">Avg. Session Duration</div>
+        </div>
+        <div class="hlc-stat-card">
+          <div class="hlc-stat-num">0</div>
+          <div class="hlc-stat-label">Days Downtime</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     7. PRICING TABLE
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-section hlc-section-alt" id="pricing">
+  <div class="hlc-container">
+    <div class="hlc-center">
+      <span class="hlc-eyebrow">Transparent Pricing</span>
+      <h2 class="hlc-section-title">Men's Laser Hair Removal Prices</h2>
+      <div class="hlc-divider"></div>
+      <p class="hlc-section-sub" style="margin-top:18px;">All prices are per session. Package discounts available — ask your consultant for bundle pricing on multiple areas.</p>
+    </div>
+
+    <!-- Tab Controls -->
+    <div class="hlc-pricing-tabs hlc-sans">
+      <button class="hlc-ptab active" onclick="hlcTab(this,'face')">Face</button>
+      <button class="hlc-ptab" onclick="hlcTab(this,'body')">Body</button>
+      <button class="hlc-ptab" onclick="hlcTab(this,'packages')">Packages</button>
+    </div>
+
+    <!-- FACE Panel -->
+    <div class="hlc-pricing-panel active" id="hlc-panel-face">
+      <table class="hlc-pricing-table">
+        <thead>
+          <tr>
+            <th>Treatment Area</th>
+            <th>Area Size</th>
+            <th>Price per Session</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Upper Lip <span class="hlc-area-tag hlc-tag-small">Small</span></td>
+            <td>Small</td>
+            <td>from AED 70</td>
+          </tr>
+          <tr>
+            <td>Chin <span class="hlc-area-tag hlc-tag-small">Small</span></td>
+            <td>Small</td>
+            <td>from AED 70</td>
+          </tr>
+          <tr>
+            <td>Ears <span class="hlc-area-tag hlc-tag-small">Small</span></td>
+            <td>Small</td>
+            <td>from AED 70</td>
+          </tr>
+          <tr>
+            <td>Sideburns <span class="hlc-area-tag hlc-tag-small">Small</span></td>
+            <td>Small</td>
+            <td>from AED 100</td>
+          </tr>
+          <tr class="hlc-tr-highlight">
+            <td>Beard Shaping / Neck Line <span class="hlc-area-tag hlc-tag-medium">Medium</span></td>
+            <td>Medium</td>
+            <td>from AED 149</td>
+          </tr>
+          <tr class="hlc-tr-highlight">
+            <td>Full Face <span class="hlc-area-tag hlc-tag-medium">Medium</span></td>
+            <td>Medium</td>
+            <td>from AED 300</td>
+          </tr>
+          <tr>
+            <td>Face &amp; Neck (Combined) <span class="hlc-area-tag hlc-tag-medium">Medium</span></td>
+            <td>Medium</td>
+            <td>from AED 400</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BODY Panel -->
+    <div class="hlc-pricing-panel" id="hlc-panel-body">
+      <table class="hlc-pricing-table">
+        <thead>
+          <tr>
+            <th>Treatment Area</th>
+            <th>Area Size</th>
+            <th>Price per Session</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Underarms <span class="hlc-area-tag hlc-tag-small">Small</span></td>
+            <td>Small</td>
+            <td>from AED 149</td>
+          </tr>
+          <tr>
+            <td>Shoulders <span class="hlc-area-tag hlc-tag-medium">Medium</span></td>
+            <td>Medium</td>
+            <td>from AED 350</td>
+          </tr>
+          <tr class="hlc-tr-highlight">
+            <td>Chest <span class="hlc-area-tag hlc-tag-large">Large</span></td>
+            <td>Large</td>
+            <td>from AED 500</td>
+          </tr>
+          <tr>
+            <td>Abdomen <span class="hlc-area-tag hlc-tag-large">Large</span></td>
+            <td>Large</td>
+            <td>from AED 500</td>
+          </tr>
+          <tr class="hlc-tr-highlight">
+            <td>Full Back <span class="hlc-area-tag hlc-tag-large">Large</span></td>
+            <td>Large</td>
+            <td>from AED 700</td>
+          </tr>
+          <tr>
+            <td>Half Back <span class="hlc-area-tag hlc-tag-large">Large</span></td>
+            <td>Large</td>
+            <td>from AED 400</td>
+          </tr>
+          <tr>
+            <td>Full Arms <span class="hlc-area-tag hlc-tag-large">Large</span></td>
+            <td>Large</td>
+            <td>from AED 700</td>
+          </tr>
+          <tr>
+            <td>Half Arms (Upper / Lower) <span class="hlc-area-tag hlc-tag-medium">Medium</span></td>
+            <td>Medium</td>
+            <td>from AED 400</td>
+          </tr>
+          <tr>
+            <td>Full Legs <span class="hlc-area-tag hlc-tag-large">Large</span></td>
+            <td>Large</td>
+            <td>from AED 900</td>
+          </tr>
+          <tr>
+            <td>Half Legs (Upper / Lower) <span class="hlc-area-tag hlc-tag-large">Large</span></td>
+            <td>Large</td>
+            <td>from AED 500</td>
+          </tr>
+          <tr>
+            <td>Buttocks <span class="hlc-area-tag hlc-tag-large">Large</span></td>
+            <td>Large</td>
+            <td>from AED 500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- PACKAGES Panel -->
+    <div class="hlc-pricing-panel" id="hlc-panel-packages">
+      <table class="hlc-pricing-table">
+        <thead>
+          <tr>
+            <th>Package</th>
+            <th>Areas Included</th>
+            <th>Price per Session</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Upper Body</strong> <span class="hlc-area-tag hlc-tag-medium">Popular</span></td>
+            <td>Chest + Back + Shoulders</td>
+            <td>from AED 1,200</td>
+          </tr>
+          <tr class="hlc-tr-highlight">
+            <td><strong>Face &amp; Neck</strong> <span class="hlc-area-tag hlc-tag-small">Grooming</span></td>
+            <td>Full Face + Neck + Ears</td>
+            <td>from AED 450</td>
+          </tr>
+          <tr>
+            <td><strong>Half Body</strong></td>
+            <td>Chest + Back + Arms</td>
+            <td>from AED 1,500</td>
+          </tr>
+          <tr class="hlc-tr-highlight">
+            <td><strong>Full Body</strong> <span class="hlc-area-tag hlc-tag-full">Best Value</span></td>
+            <td>All Areas Head to Toe</td>
+            <td>from AED 2,500</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="hlc-pricing-note hlc-sans">
+        &#9733; Packages include a complimentary consultation and a personalised treatment plan. Bundle 6 sessions for up to 20% savings — ask your specialist.
+      </div>
+    </div>
+
+    <!-- CTA Row -->
+    <div class="hlc-pricing-cta-row">
+      <p class="hlc-sans"><strong>Not sure which areas to choose?</strong> Book a free consultation and our specialists will create the right plan for your skin and goals.</p>
+      <a href="/contact" class="hlc-btn hlc-btn-primary hlc-sans">Book Free Consultation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     8. TESTIMONIALS
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-section">
+  <div class="hlc-container">
+    <div class="hlc-center">
+      <span class="hlc-eyebrow">Client Stories</span>
+      <h2 class="hlc-section-title">Real Results, Real Men</h2>
+      <div class="hlc-divider"></div>
+    </div>
+    <div class="hlc-results-grid">
+      <div class="hlc-result-card">
+        <div class="hlc-result-stars">
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+        </div>
+        <p>"I had severe ingrown hairs on my neck from years of shaving. After just three sessions at Halcyon, the difference was remarkable. The team is professional, discrete, and the clinic feels genuinely premium."</p>
+        <div class="hlc-result-author">
+          <div class="hlc-result-avatar">A</div>
+          <div class="hlc-result-meta">
+            <div class="hlc-result-name">Ahmed K.</div>
+            <div class="hlc-result-area">Treatment: Beard &amp; Neck Line</div>
+          </div>
+        </div>
+      </div>
+      <div class="hlc-result-card">
+        <div class="hlc-result-stars">
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+        </div>
+        <p>"I was sceptical about laser on my dark skin tone, but the team explained the technology thoroughly. My back and chest results after 6 sessions are unbelievable — I wish I had done this years ago."</p>
+        <div class="hlc-result-author">
+          <div class="hlc-result-avatar">M</div>
+          <div class="hlc-result-meta">
+            <div class="hlc-result-name">Mohammed S.</div>
+            <div class="hlc-result-area">Treatment: Full Back &amp; Chest</div>
+          </div>
+        </div>
+      </div>
+      <div class="hlc-result-card">
+        <div class="hlc-result-stars">
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+          <span class="hlc-result-star">&#9733;</span>
+        </div>
+        <p>"The sessions are genuinely pain-free — the cooling system makes a huge difference. Pricing is transparent, the staff never push unnecessary upsells. Halcyon is my clinic for life."</p>
+        <div class="hlc-result-author">
+          <div class="hlc-result-avatar">J</div>
+          <div class="hlc-result-meta">
+            <div class="hlc-result-name">James R.</div>
+            <div class="hlc-result-area">Treatment: Full Body Package</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     9. FAQ
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-section hlc-section-alt">
+  <div class="hlc-container">
+    <div class="hlc-faq-layout">
+      <div class="hlc-faq-sidebar">
+        <span class="hlc-eyebrow">FAQs</span>
+        <h3 class="hlc-section-title" style="font-size:1.9rem">Frequently Asked Questions</h3>
+        <div class="hlc-divider hlc-divider-left" style="margin-bottom:20px"></div>
+        <p>Everything you need to know before your first session. Still have questions? Our team is happy to answer them during your free consultation.</p>
+        <a href="/contact" class="hlc-btn hlc-btn-outline-dark hlc-sans" style="margin-top:20px">Ask Us Anything</a>
+      </div>
+      <div class="hlc-faq-list">
+
+        <div class="hlc-faq-item">
+          <button class="hlc-faq-q hlc-sans" onclick="hlcFaq(this)">
+            Does laser hair removal hurt for men?
+            <span class="hlc-faq-icon">+</span>
+          </button>
+          <div class="hlc-faq-a">
+            <p>With the Soprano Titanium's SHR in-motion technology and integrated ICE cooling system, most men describe the sensation as a warm massage rather than pain. Coarser hair areas such as the back may feel slightly more intense, but nothing that requires numbing cream for most clients.</p>
+          </div>
+        </div>
+
+        <div class="hlc-faq-item">
+          <button class="hlc-faq-q hlc-sans" onclick="hlcFaq(this)">
+            How many sessions will I need?
+            <span class="hlc-faq-icon">+</span>
+          </button>
+          <div class="hlc-faq-a">
+            <p>Most men require 6–8 sessions spaced 4–6 weeks apart to achieve optimal results. The exact number depends on your hair colour, thickness, and treatment area. Hormonal areas such as the beard may require more sessions. We will give you a clear estimate at your consultation.</p>
+          </div>
+        </div>
+
+        <div class="hlc-faq-item">
+          <button class="hlc-faq-q hlc-sans" onclick="hlcFaq(this)">
+            Is laser hair removal safe for dark skin tones?
+            <span class="hlc-faq-icon">+</span>
+          </button>
+          <div class="hlc-faq-a">
+            <p>Yes. The Soprano Titanium's combined wavelength system — including the 1064nm Nd:YAG laser — is specifically designed to be safe and effective for Type IV, V, and VI (dark) skin tones. Our DHA-certified team has extensive experience treating diverse skin types safely.</p>
+          </div>
+        </div>
+
+        <div class="hlc-faq-item">
+          <button class="hlc-faq-q hlc-sans" onclick="hlcFaq(this)">
+            Can I shave between sessions?
+            <span class="hlc-faq-icon">+</span>
+          </button>
+          <div class="hlc-faq-a">
+            <p>Yes — shaving between sessions is completely fine and actually recommended. You should avoid waxing, plucking, or threading as these remove the hair root that the laser needs to target. Shaving leaves the follicle intact.</p>
+          </div>
+        </div>
+
+        <div class="hlc-faq-item">
+          <button class="hlc-faq-q hlc-sans" onclick="hlcFaq(this)">
+            What should I do before my session?
+            <span class="hlc-faq-icon">+</span>
+          </button>
+          <div class="hlc-faq-a">
+            <p>Shave the treatment area 24 hours before your appointment. Avoid sun exposure, tanning beds, and self-tanner for at least 2 weeks prior. Come with clean, product-free skin. Avoid caffeine immediately before if you are sensitive to warmth sensations.</p>
+          </div>
+        </div>
+
+        <div class="hlc-faq-item">
+          <button class="hlc-faq-q hlc-sans" onclick="hlcFaq(this)">
+            Are the results permanent?
+            <span class="hlc-faq-icon">+</span>
+          </button>
+          <div class="hlc-faq-a">
+            <p>Laser hair removal produces long-lasting to permanent reduction — not always 100% permanent for every individual hair. Most clients achieve 85–95% reduction that is permanent after completing their course. Occasional maintenance sessions (once a year) may be recommended for hormonal areas.</p>
+          </div>
+        </div>
+
+        <div class="hlc-faq-item">
+          <button class="hlc-faq-q hlc-sans" onclick="hlcFaq(this)">
+            What is the aftercare routine?
+            <span class="hlc-faq-icon">+</span>
+          </button>
+          <div class="hlc-faq-a">
+            <p>For 24–48 hours post-treatment: avoid sun exposure, hot showers, saunas, and intense exercise. Apply the provided soothing gel to any redness. SPF 50 on exposed areas is essential. Hair will continue to shed over 1–3 weeks post-session — this is normal and expected.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════════════
+     10. FINAL CTA BANNER
+═════════════════════════════════════════════════════════════ -->
+<section class="hlc-cta-banner">
+  <div class="hlc-container">
+    <span class="hlc-eyebrow">Start Today</span>
+    <h2>Ready for Permanently<br>Smoother Skin?</h2>
+    <p>Book your complimentary consultation at our Jumeirah clinic. No obligation — just expert advice tailored to you.</p>
+    <div class="hlc-cta-btns">
+      <a href="/contact" class="hlc-btn hlc-btn-primary hlc-sans">Book Free Consultation</a>
+      <a href="tel:+971561430966" class="hlc-btn hlc-btn-outline hlc-sans">Call: +971 56 143 0966</a>
+    </div>
+    <div class="hlc-cta-contacts">
+      <div class="hlc-cta-contact-item">
+        <svg width="15" height="15" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <span>Jumeirah 1, Dubai, UAE</span>
+      </div>
+      <div class="hlc-cta-contact-item">
+        <svg width="15" height="15" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <a href="tel:+971561430966">+971 56 143 0966</a>
+      </div>
+      <div class="hlc-cta-contact-item">
+        <svg width="15" height="15" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4l3 3"/></svg>
+        Mon–Sat: 10:00 AM – 8:00 PM
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.hlc-wrap -->
+
+<!-- ════════════════════════════════════════════════════════════
+     JAVASCRIPT — Tabs & FAQ Accordion
+═════════════════════════════════════════════════════════════ -->
+<script>
+function hlcTab(btn, panel) {
+  var wrap = btn.closest('.hlc-section-alt') || btn.closest('section');
+  wrap.querySelectorAll('.hlc-ptab').forEach(function(b){ b.classList.remove('active'); });
+  wrap.querySelectorAll('.hlc-pricing-panel').forEach(function(p){ p.classList.remove('active'); });
+  btn.classList.add('active');
+  var target = wrap.querySelector('#hlc-panel-' + panel);
+  if (target) target.classList.add('active');
+}
+
+function hlcFaq(btn) {
+  var item  = btn.parentElement;
+  var ans   = item.querySelector('.hlc-faq-a');
+  var isOpen = btn.classList.contains('open');
+  var list  = btn.closest('.hlc-faq-list');
+  list.querySelectorAll('.hlc-faq-q').forEach(function(q){ q.classList.remove('open'); });
+  list.querySelectorAll('.hlc-faq-a').forEach(function(a){ a.classList.remove('open'); });
+  if (!isOpen) {
+    btn.classList.add('open');
+    ans.classList.add('open');
+  }
+}
+</script>
